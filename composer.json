@@ -1,0 +1,18 @@
+{
+    "name": "manojatakare/tddworkshop",
+    "description": "Test Driven Development",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {"Phpreboot\\": "src/phpreboot"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Tests\\Phpreboot\\": "tests/phpreboot"}
+    },
+    "require": {
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0.0"
+    }
+}
