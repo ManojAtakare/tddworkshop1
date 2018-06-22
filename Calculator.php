@@ -6,6 +6,7 @@ use Phpreboot\tddworkshop\Calculator;
 
 $calculator = new Calculator();
 
+
 if (!isset($argv[1])) {
     echo 'Operation missing.' . PHP_EOL;
     exit(0);

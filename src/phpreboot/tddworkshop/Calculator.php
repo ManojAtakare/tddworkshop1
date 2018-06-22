@@ -13,7 +13,7 @@ class Calculator
 {
     public function add($numbers)
     {
-
+        
         if (empty($numbers)) {
             return 0;
         }
@@ -21,7 +21,10 @@ class Calculator
             throw new \InvalidArgumentException('Parameters must be a string');
         }
 
-        $numbers = str_replace("n", ",", $numbers);
+        $regex = ['@','$','!','%',"^",'&','*','(',')','-','+','_',';','{','}','[',']'];
+        $numbers = stripslashes($numbers);
+        $numbers = str_replace($regex, ",", $numbers);
+        $numbers = trim($numbers,',');
 
         $numbersArray = explode(",", $numbers);
 
