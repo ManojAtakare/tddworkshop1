@@ -18,6 +18,11 @@ switch ($argv[1]) {
         $numbers = isset($argv[2]) ? $argv[2] : '';
         echo $calculator->add($numbers) . PHP_EOL;
         break;
+
+    case 'mul':
+        $numbers = isset($argv[2]) ? $argv[2] : '';
+        echo $calculator->mul($numbers) . PHP_EOL;
+        break;
     default:
         echo 'Please check the operator.' . PHP_EOL;
 }
