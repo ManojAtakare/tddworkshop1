@@ -33,8 +33,8 @@ class Calculator
 
 
         if(count($negative) > 0){
-           // $negativeNo = implode(',',$negative);
-            throw new \InvalidArgumentException("Negative numbers not allowed.");
+            $negativeNo = implode(',',$negative);
+            throw new \InvalidArgumentException("Negative numbers (".$negativeNo.") not allowed.");
         }
 
 
