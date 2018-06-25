@@ -6,6 +6,7 @@ use Phpreboot\tddworkshop\Calculator;
 
 $calculator = new Calculator();
 
+
 if (!isset($argv[1])) {
     echo 'Operation missing.' . PHP_EOL;
     exit(0);
@@ -13,12 +14,14 @@ if (!isset($argv[1])) {
 
 try {
 switch ($argv[1]) {
-    case 'sum':
+    case 'add':
         $numbers = isset($argv[2]) ? $argv[2] : '';
+
         echo $calculator->add($numbers) . PHP_EOL;
         break;
     case 'mul':
         $numbers = isset($argv[2]) ? $argv[2] : '';
+
         echo $calculator->mul($numbers) . PHP_EOL;
         break;
     default:
