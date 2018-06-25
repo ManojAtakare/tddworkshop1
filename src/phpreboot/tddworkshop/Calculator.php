@@ -35,5 +35,30 @@ class Calculator
         return array_sum($numbersArray);
     }
 
+
+    public function mul($numbers)
+    {
+
+        if (empty($numbers)) {
+            return 0;
+        }
+        if (!is_string($numbers)) {
+            throw new \InvalidArgumentException('Parameters must be a string');
+        }
+
+        $regex = ['@','$','!','%',"^",'&','*','(',')','-','+','_',';','{','}','[',']'];
+        $numbers = stripslashes($numbers);
+        $numbers = str_replace($regex, ",", $numbers);
+        $numbers = trim($numbers,',');
+
+        $numbersArray = explode(",", $numbers);
+
+        if (array_filter($numbersArray, 'is_numeric') !== $numbersArray) {
+            throw new \InvalidArgumentException('Parameters string must contain numbers');
+        }
+
+        return array_product($numbersArray);
+    }
+
 }
 
