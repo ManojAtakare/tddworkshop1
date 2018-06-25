@@ -23,20 +23,10 @@ class Calculator
         $numbers = stripslashes($numbers);
         $numbers = explode(",", $numbers);
 
-        $negative = array_filter($numbers, function ($v) {
-            return $v < 0;
-        });
 
         $numbersArray = array_filter($numbers, function ($v) {
-            return $v > 0;
+            return $v < 1000;
         });
-
-
-        if(count($negative) > 0){
-            $negativeNo = implode(',',$negative);
-            throw new \InvalidArgumentException("Negative numbers (".$negativeNo.") not allowed.");
-        }
-
 
 
         if (array_filter($numbersArray, 'is_numeric') !== $numbersArray) {
