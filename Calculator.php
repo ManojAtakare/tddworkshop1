@@ -13,7 +13,7 @@ if (!isset($argv[1])) {
 
 try {
 switch ($argv[1]) {
-    case 'add':
+    case 'sum':
         $numbers = isset($argv[2]) ? $argv[2] : '';
         echo $calculator->add($numbers) . PHP_EOL;
         break;
